@@ -1,0 +1,67 @@
+body {
+    text-align: center;
+    padding-top: 50px;
+    background: linear-gradient(135deg, #f3ecec 0%, #f9ce20 100%);
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    display: none;
+}
+
+.pattern-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.pattern {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: url('milkdragon.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+.pattern:nth-child(1) { top: 10%; left: 15%; }
+.pattern:nth-child(2) { top: 20%; right: 20%; }
+.pattern:nth-child(3) { top: 60%; left: 25%; }
+.pattern:nth-child(4) { top: 70%; right: 15%; }
+.pattern:nth-child(5) { top: 40%; left: 50%; }
+.pattern:nth-child(6) { top: 85%; left: 40%; }
+
+h1, .dragon {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    color: #f9d211;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h1:active {
+    transform: scale(1.2);
+}
+
+.dragon {
+    width: 200px;
+    margin-top: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+} 
